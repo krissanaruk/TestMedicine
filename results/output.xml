@@ -1,128 +1,594 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.1 on win32)" generated="2025-08-30T19:27:39.605647" rpa="false" schemaversion="5">
-<suite id="s1" name="Reservation" source="C:\Users\krissanaruks\OneDrive\เดสก์ท็อป\krissanaruks\TestMedicine\reservation.robot">
-<test id="s1-t1" name="success เลือกสาขาเเละเเพทย์ที่จะจอง" line="15">
+<robot generator="Robot 7.3.2 (Python 3.13.1 on win32)" generated="2025-08-30T19:32:06.547628" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\krissanaruks\OneDrive\เดสก์ท็อป\krissanaruks\TestMedicine\Login.robot">
+<test id="s1-t1" name="Login Success เข้าสู่ระบบด้วยอีเมลและรหัสที่ถูกต้อง" line="34">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-30T19:27:39.897668" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/patient/home'.</msg>
-<arg>${HOME_URL}</arg>
+<msg time="2025-08-30T19:32:06.865596" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/login'.</msg>
+<arg>${LOGIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-30T19:27:39.897409" elapsed="1.590442"/>
+<status status="PASS" start="2025-08-30T19:32:06.865289" elapsed="1.478003"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-30T19:27:41.488448" elapsed="0.022974"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${branch}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-30T19:27:41.511843" elapsed="0.657989"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-30T19:27:42.170558" level="INFO">Clicking element 'xpath=//*[@id="root"]/div/main/div/div/div[1]/div[2]/div/div[2]/span[1]'.</msg>
-<arg>${branch}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-30T19:27:42.170278" elapsed="0.102358"/>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1366</arg>
+<arg>768</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-08-30T19:32:08.343923" elapsed="0.376575"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${branch_btn}</arg>
+<arg>${EMAIL_INPUT}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-30T19:27:42.273630" elapsed="0.052030"/>
+<status status="PASS" start="2025-08-30T19:32:08.720905" elapsed="0.031003"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:08.752727" level="INFO">Typing text 'ksnr2412@gmail.com' into text field 'xpath=//form//label[contains(normalize-space(),'Email')]/following::input[1]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${VALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:08.752355" elapsed="0.216877"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:08.969893" level="INFO">Typing text '1234' into text field 'xpath=//form//input[@type='password'][1]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:08.969571" elapsed="0.088524"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-30T19:27:42.326541" level="INFO">Clicking element 'xpath=//button[normalize-space()='รายละเอียด']/following-sibling::button[normalize-space()='จอง']'.</msg>
-<arg>${branch_btn}</arg>
+<msg time="2025-08-30T19:32:09.058620" level="INFO">Clicking element 'xpath=//form//button[@type='submit' and (contains(normalize-space(.),'เข้าสู่ระบบ') or contains(normalize-space(.),'Login') or contains(normalize-space(.),'Sign in'))]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-30T19:27:42.326270" elapsed="0.088838"/>
+<status status="PASS" start="2025-08-30T19:32:09.058406" elapsed="0.132520"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/patient/home</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-08-30T19:32:09.191409" elapsed="0.428793"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-08-30T19:27:42.415631" elapsed="2.152165"/>
+<status status="PASS" start="2025-08-30T19:32:09.620693" elapsed="2.149034"/>
 </kw>
-<status status="PASS" start="2025-08-30T19:27:39.896186" elapsed="4.672536"/>
+<status status="PASS" start="2025-08-30T19:32:06.863717" elapsed="4.906563"/>
 </test>
-<test id="s1-t2" name="success เจองคิวสำเร็จ" line="24">
+<test id="s1-t2" name="Login Fails การเข้าสู่ระบบด้วยอีเมลที่ผิดฟอร์แมต" line="44">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-30T19:27:44.573022" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/patient/home'.</msg>
-<arg>${HOME_URL}</arg>
+<msg time="2025-08-30T19:32:11.774006" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/login'.</msg>
+<arg>${LOGIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-30T19:27:44.572567" elapsed="1.503389"/>
+<status status="PASS" start="2025-08-30T19:32:11.773776" elapsed="1.553870"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-30T19:27:46.076644" elapsed="0.035013"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${branch}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-30T19:27:46.112083" elapsed="0.249809"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-30T19:27:46.363318" level="INFO">Clicking element 'xpath=//*[@id="root"]/div/main/div/div/div[1]/div[2]/div/div[2]/span[1]'.</msg>
-<arg>${branch}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-30T19:27:46.362880" elapsed="0.088457"/>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1366</arg>
+<arg>768</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-08-30T19:32:13.328207" elapsed="0.418204"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${branch_btn}</arg>
+<arg>${EMAIL_INPUT}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-30T19:27:46.451769" elapsed="0.058761"/>
+<status status="PASS" start="2025-08-30T19:32:13.747214" elapsed="0.051487"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:13.800474" level="INFO">Typing text '1234' into text field 'xpath=//form//label[contains(normalize-space(),'Email')]/following::input[1]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${INVALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:13.799742" elapsed="0.343837"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:14.144258" level="INFO">Typing text '1234' into text field 'xpath=//form//input[@type='password'][1]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:14.143991" elapsed="0.239516"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-30T19:27:46.511062" level="INFO">Clicking element 'xpath=//button[normalize-space()='รายละเอียด']/following-sibling::button[normalize-space()='จอง']'.</msg>
-<arg>${branch_btn}</arg>
+<msg time="2025-08-30T19:32:14.384722" level="INFO">Clicking element 'xpath=//form//button[@type='submit' and (contains(normalize-space(.),'เข้าสู่ระบบ') or contains(normalize-space(.),'Login') or contains(normalize-space(.),'Sign in'))]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-30T19:27:46.510816" elapsed="0.070404"/>
+<status status="PASS" start="2025-08-30T19:32:14.384392" elapsed="0.220169"/>
+</kw>
+<kw name="Wait For Inline Warning Box">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:14.900737" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-30T19:32:14.900948" level="FAIL">Page should have contained element 'xpath=//form//button[@type='submit']/preceding::div[contains(@class,'MuiBox-root')][normalize-space()][1]' but did not.</msg>
+<arg>${WARNING_FAIL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-08-30T19:32:14.607998" elapsed="0.332437">Page should have contained element 'xpath=//form//button[@type='submit']/preceding::div[contains(@class,'MuiBox-root')][normalize-space()][1]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:15.953469" level="INFO">Current page contains element 'xpath=//form//button[@type='submit']/preceding::div[contains(@class,'MuiBox-root')][normalize-space()][1]'.</msg>
+<arg>${WARNING_FAIL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-08-30T19:32:15.941732" elapsed="0.011851"/>
+</kw>
+<arg>${timeout}</arg>
+<arg>1s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${WARNING_FAIL}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-08-30T19:32:14.607322" elapsed="1.346375"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${WARNING_FAIL}</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:15.953870" elapsed="0.012868"/>
+</kw>
+<arg>15s</arg>
+<status status="PASS" start="2025-08-30T19:32:14.606403" elapsed="1.360444"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:15.967102" elapsed="0.010295"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-08-30T19:27:46.581639" elapsed="2.128064"/>
+<status status="PASS" start="2025-08-30T19:32:15.977673" elapsed="2.165296"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-08-30T19:27:48.711272" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg time="2025-08-30T19:27:48.711498" level="FAIL">No browser is open.</msg>
-<arg>${reserve_btn_today}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-08-30T19:27:48.710431" elapsed="0.007249">No browser is open.</status>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${reserve_btn_today}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-30T19:27:48.718100" elapsed="0.000063"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${reserve_btn_summit}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-08-30T19:27:48.718578" elapsed="0.000052"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${reserve_btn_summit}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-30T19:27:48.718866" elapsed="0.000049"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-08-30T19:27:48.719121" elapsed="0.000040"/>
-</kw>
-<status status="FAIL" start="2025-08-30T19:27:44.570501" elapsed="4.148967">No browser is open.</status>
+<status status="PASS" start="2025-08-30T19:32:11.771815" elapsed="6.372857"/>
 </test>
-<status status="FAIL" start="2025-08-30T19:27:39.607375" elapsed="9.113107"/>
+<test id="s1-t3" name="Login Fails การเข้าสู่ระบบด้วยอีเมลที่ไม่ได้ลงทะเบียน" line="55">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:18.148968" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-30T19:32:18.148534" elapsed="1.422444"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1366</arg>
+<arg>768</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-08-30T19:32:19.571394" elapsed="0.368579"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:19.940777" elapsed="0.034882"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:19.976533" level="INFO">Typing text 'test@gmail.com' into text field 'xpath=//form//label[contains(normalize-space(),'Email')]/following::input[1]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${NO_EMAIL_DB}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:19.976212" elapsed="0.259626"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:20.236538" level="INFO">Typing text '1234' into text field 'xpath=//form//input[@type='password'][1]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${NO_PASSWORD_DB}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:20.236203" elapsed="0.079975"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:20.316734" level="INFO">Clicking element 'xpath=//form//button[@type='submit' and (contains(normalize-space(.),'เข้าสู่ระบบ') or contains(normalize-space(.),'Login') or contains(normalize-space(.),'Sign in'))]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:20.316493" elapsed="0.071164"/>
+</kw>
+<kw name="Wait For Inline Warning Box">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:20.580398" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-30T19:32:20.580581" level="FAIL">Page should have contained element 'xpath=//form//button[@type='submit']/preceding::div[contains(@class,'MuiBox-root')][normalize-space()][1]' but did not.</msg>
+<arg>${WARNING_FAIL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-08-30T19:32:20.388668" elapsed="0.192681">Page should have contained element 'xpath=//form//button[@type='submit']/preceding::div[contains(@class,'MuiBox-root')][normalize-space()][1]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:21.590064" level="INFO">Current page contains element 'xpath=//form//button[@type='submit']/preceding::div[contains(@class,'MuiBox-root')][normalize-space()][1]'.</msg>
+<arg>${WARNING_FAIL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-08-30T19:32:21.582130" elapsed="0.008028"/>
+</kw>
+<arg>${timeout}</arg>
+<arg>1s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${WARNING_FAIL}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-08-30T19:32:20.388446" elapsed="1.201802"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${WARNING_FAIL}</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:21.590389" elapsed="0.011326"/>
+</kw>
+<arg>15s</arg>
+<status status="PASS" start="2025-08-30T19:32:20.388093" elapsed="1.213732"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:21.602146" elapsed="0.012216"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-30T19:32:21.614658" elapsed="2.151801"/>
+</kw>
+<status status="PASS" start="2025-08-30T19:32:18.145921" elapsed="5.621886"/>
+</test>
+<test id="s1-t4" name="Login Fails การเข้าสู่ระบบโดยไม่กรอกอีเมลเเละรหัสผ่าน" line="66">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:23.771176" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-30T19:32:23.770797" elapsed="1.450688"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1366</arg>
+<arg>768</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-08-30T19:32:25.221865" elapsed="0.366181"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:25.588841" elapsed="0.051295"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:25.640756" level="INFO">Typing text '' into text field 'xpath=//form//label[contains(normalize-space(),'Email')]/following::input[1]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${NULL_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:25.640455" elapsed="0.114500"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:25.755576" level="INFO">Typing text '' into text field 'xpath=//form//input[@type='password'][1]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${NULL_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:25.755281" elapsed="0.154107"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:25.910205" level="INFO">Clicking element 'xpath=//form//button[@type='submit' and (contains(normalize-space(.),'เข้าสู่ระบบ') or contains(normalize-space(.),'Login') or contains(normalize-space(.),'Sign in'))]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:25.909830" elapsed="0.096066"/>
+</kw>
+<kw name="Expect Browser Validation Blocks Submit">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="_assert invalid field exists">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:26.007609" level="INFO">Executing JavaScript:
+return document.querySelectorAll('form :invalid').length;
+Without any arguments.</msg>
+<msg time="2025-08-30T19:32:26.014324" level="INFO">${invalid_count} = 2</msg>
+<var>${invalid_count}</var>
+<arg>return document.querySelectorAll('form :invalid').length;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-08-30T19:32:26.007278" elapsed="0.007092"/>
+</kw>
+<kw name="Should Not Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-08-30T19:32:26.014996" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${invalid_count}</arg>
+<arg>0</arg>
+<doc>Fails if objects are equal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-30T19:32:26.014661" elapsed="0.000445"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:26.015906" level="INFO">Executing JavaScript:
+var el=document.querySelector('form :invalid'); return el ? el.validationMessage : '';
+Without any arguments.</msg>
+<msg time="2025-08-30T19:32:26.021953" level="INFO">${first_msg} = Please fill out this field.</msg>
+<var>${first_msg}</var>
+<arg>var el=document.querySelector('form :invalid'); return el ? el.validationMessage : '';</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-08-30T19:32:26.015433" elapsed="0.006584"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-30T19:32:26.022503" level="INFO">Browser validation message: Please fill out this field.</msg>
+<arg>Browser validation message: ${first_msg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-30T19:32:26.022240" elapsed="0.000323"/>
+</kw>
+<status status="PASS" start="2025-08-30T19:32:26.007100" elapsed="0.015579"/>
+</kw>
+<arg>${timeout}</arg>
+<arg>0.5s</arg>
+<arg>_assert invalid field exists</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-08-30T19:32:26.006838" elapsed="0.015989"/>
+</kw>
+<arg>10s</arg>
+<status status="PASS" start="2025-08-30T19:32:26.006426" elapsed="0.016562"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:26.023287" elapsed="0.021698"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-30T19:32:26.045506" elapsed="2.119715"/>
+</kw>
+<status status="PASS" start="2025-08-30T19:32:23.768678" elapsed="4.397560"/>
+</test>
+<test id="s1-t5" name="Login Success การทำงานปุ่มสมัครสมาชิก" line="79">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:28.169283" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-30T19:32:28.168851" elapsed="1.439060"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1366</arg>
+<arg>768</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-08-30T19:32:29.608443" elapsed="0.397694"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:30.006849" elapsed="0.041964"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:30.049841" level="INFO">Clicking element 'xpath=//a[contains(@href,'register') or contains(normalize-space(.),'สมัครสมาชิก')]'.</msg>
+<arg>${REGISTER_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:30.049464" elapsed="0.333600"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>${register_URL}</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-08-30T19:32:30.383435" elapsed="0.007042"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-30T19:32:30.390919" elapsed="2.104227"/>
+</kw>
+<status status="PASS" start="2025-08-30T19:32:28.167249" elapsed="4.330115"/>
+</test>
+<test id="s1-t6" name="Login Success การทำงานปุ่มลืมรหัสผ่าน" line="87">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:32.501948" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-30T19:32:32.501491" elapsed="1.429870"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1366</arg>
+<arg>768</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-08-30T19:32:33.931828" elapsed="0.363561"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:34.296077" elapsed="0.035315"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:34.332038" level="INFO">Clicking element 'xpath=//form//a[contains(@href,'forgot') or contains(@href,'forget') or contains(normalize-space(.),'ลืมรหัสผ่าน')]'.</msg>
+<arg>${FORGOT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:34.331732" elapsed="0.228501"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:44.827846" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-30T19:32:44.828012" level="FAIL">Location did not contain 'http://localhost:5173/forget' in 10 seconds.</msg>
+<arg>${Forget_URL}</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="FAIL" start="2025-08-30T19:32:34.560863" elapsed="10.268897">Location did not contain 'http://localhost:5173/forget' in 10 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-08-30T19:32:44.830194" elapsed="0.000080"/>
+</kw>
+<status status="FAIL" start="2025-08-30T19:32:32.499788" elapsed="12.330822">Location did not contain 'http://localhost:5173/forget' in 10 seconds.</status>
+</test>
+<test id="s1-t7" name="Password Toggle — Show/Hide" line="95">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:44.835319" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-30T19:32:44.835026" elapsed="1.488961"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1366</arg>
+<arg>768</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-08-30T19:32:46.324404" elapsed="0.364418"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:32:46.689247" elapsed="0.021369"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:46.711412" level="INFO">Typing text 'ksnr2412@gmail.com' into text field 'xpath=//form//label[contains(normalize-space(),'Email')]/following::input[1]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${VALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:46.711070" elapsed="0.187022"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:46.898797" level="INFO">Typing text '23131' into text field 'xpath=//form//input[@type='password'][1]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>23131</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:46.898541" elapsed="0.089109"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:47.008674" level="INFO">${t} = password</msg>
+<var>${t}</var>
+<arg>${PASSWORD_FIELD_ANY}</arg>
+<arg>type</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:46.988216" elapsed="0.020501"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${t}'=='text'</arg>
+<arg>Click Element</arg>
+<arg>${PW_TOGGLE_BTN}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-30T19:32:47.009682" elapsed="0.000238"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Type Should Be">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:47.028063" level="INFO">${t} = password</msg>
+<var>${t}</var>
+<arg>${locator}</arg>
+<arg>type</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:47.010719" elapsed="0.017391"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${t}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-30T19:32:47.028265" elapsed="0.000209"/>
+</kw>
+<arg>${PASSWORD_FIELD_ANY}</arg>
+<arg>password</arg>
+<status status="PASS" start="2025-08-30T19:32:47.010443" elapsed="0.018101"/>
+</kw>
+<arg>5s</arg>
+<arg>0.2s</arg>
+<arg>Input Type Should Be</arg>
+<arg>${PASSWORD_FIELD_ANY}</arg>
+<arg>password</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-08-30T19:32:47.010209" elapsed="0.018385"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:50.157879" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-30T19:32:50.158025" level="FAIL">Element 'xpath=//*[@data-testid='VisibilityOffIcon']' did not appear in 3 seconds.</msg>
+<arg>${PW_ICON_HIDE}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-08-30T19:32:47.029052" elapsed="3.129802">Element 'xpath=//*[@data-testid='VisibilityOffIcon']' did not appear in 3 seconds.</status>
+</kw>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${PW_ICON_HIDE}</arg>
+<arg>3s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-08-30T19:32:47.028905" elapsed="3.130086"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:50.160089" level="INFO">Clicking element 'xpath=//*[@data-testid='VisibilityOffIcon' or @data-testid='VisibilityIcon']/ancestor::button[1]'.</msg>
+<arg>${PW_TOGGLE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:50.159866" elapsed="0.108290"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Type Should Be">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:50.286161" level="INFO">${t} = text</msg>
+<var>${t}</var>
+<arg>${locator}</arg>
+<arg>type</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:50.269334" elapsed="0.016878"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${t}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-30T19:32:50.286380" elapsed="0.000272"/>
+</kw>
+<arg>${PASSWORD_FIELD_ANY}</arg>
+<arg>text</arg>
+<status status="PASS" start="2025-08-30T19:32:50.269000" elapsed="0.017725"/>
+</kw>
+<arg>5s</arg>
+<arg>0.2s</arg>
+<arg>Input Type Should Be</arg>
+<arg>${PASSWORD_FIELD_ANY}</arg>
+<arg>text</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-08-30T19:32:50.268574" elapsed="0.018196"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:53.616975" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-30T19:32:53.617131" level="FAIL">Element 'xpath=//*[@data-testid='VisibilityIcon']' did not appear in 3 seconds.</msg>
+<arg>${PW_ICON_SHOW}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-08-30T19:32:50.287519" elapsed="3.330924">Element 'xpath=//*[@data-testid='VisibilityIcon']' did not appear in 3 seconds.</status>
+</kw>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${PW_ICON_SHOW}</arg>
+<arg>3s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-08-30T19:32:50.287322" elapsed="3.331330"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:53.619409" level="INFO">Clicking element 'xpath=//*[@data-testid='VisibilityOffIcon' or @data-testid='VisibilityIcon']/ancestor::button[1]'.</msg>
+<arg>${PW_TOGGLE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:53.619106" elapsed="0.063674"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Type Should Be">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:32:53.699741" level="INFO">${t} = password</msg>
+<var>${t}</var>
+<arg>${locator}</arg>
+<arg>type</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:32:53.683853" elapsed="0.015939"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${t}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-30T19:32:53.699963" elapsed="0.000252"/>
+</kw>
+<arg>${PASSWORD_FIELD_ANY}</arg>
+<arg>password</arg>
+<status status="PASS" start="2025-08-30T19:32:53.683553" elapsed="0.016737"/>
+</kw>
+<arg>5s</arg>
+<arg>0.2s</arg>
+<arg>Input Type Should Be</arg>
+<arg>${PASSWORD_FIELD_ANY}</arg>
+<arg>password</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-08-30T19:32:53.683203" elapsed="0.017134"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-30T19:32:53.700679" elapsed="2.182071"/>
+</kw>
+<status status="PASS" start="2025-08-30T19:32:44.833533" elapsed="11.050359"/>
+</test>
+<status status="FAIL" start="2025-08-30T19:32:06.549398" elapsed="49.336164"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="1" skip="0">All Tests</stat>
+<stat pass="6" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Reservation" id="s1" pass="1" fail="1" skip="0">Reservation</stat>
+<stat name="Login" id="s1" pass="6" fail="1" skip="0">Login</stat>
 </suite>
 </statistics>
 <errors>

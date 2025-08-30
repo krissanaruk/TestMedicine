@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary    run_on_failure=Capture Page Screenshot
+Suite Setup    Set Screenshot Directory    ${OUTPUT DIR}${/}screenshots
 
 *** Variables ***
 ${BROWSER}          chrome
