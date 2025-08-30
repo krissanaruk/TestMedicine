@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.1 on win32)" generated="2025-08-30T19:27:39.605647" rpa="false" schemaversion="5">
+<suite id="s1" name="Reservation" source="C:\Users\krissanaruks\OneDrive\เดสก์ท็อป\krissanaruks\TestMedicine\reservation.robot">
+<test id="s1-t1" name="success เลือกสาขาเเละเเพทย์ที่จะจอง" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:27:39.897668" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/patient/home'.</msg>
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-30T19:27:39.897409" elapsed="1.590442"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-30T19:27:41.488448" elapsed="0.022974"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${branch}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:27:41.511843" elapsed="0.657989"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:27:42.170558" level="INFO">Clicking element 'xpath=//*[@id="root"]/div/main/div/div/div[1]/div[2]/div/div[2]/span[1]'.</msg>
+<arg>${branch}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:27:42.170278" elapsed="0.102358"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${branch_btn}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:27:42.273630" elapsed="0.052030"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:27:42.326541" level="INFO">Clicking element 'xpath=//button[normalize-space()='รายละเอียด']/following-sibling::button[normalize-space()='จอง']'.</msg>
+<arg>${branch_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:27:42.326270" elapsed="0.088838"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-30T19:27:42.415631" elapsed="2.152165"/>
+</kw>
+<status status="PASS" start="2025-08-30T19:27:39.896186" elapsed="4.672536"/>
+</test>
+<test id="s1-t2" name="success เจองคิวสำเร็จ" line="24">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:27:44.573022" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/patient/home'.</msg>
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-30T19:27:44.572567" elapsed="1.503389"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-30T19:27:46.076644" elapsed="0.035013"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${branch}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:27:46.112083" elapsed="0.249809"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:27:46.363318" level="INFO">Clicking element 'xpath=//*[@id="root"]/div/main/div/div/div[1]/div[2]/div/div[2]/span[1]'.</msg>
+<arg>${branch}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:27:46.362880" elapsed="0.088457"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${branch_btn}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-30T19:27:46.451769" elapsed="0.058761"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:27:46.511062" level="INFO">Clicking element 'xpath=//button[normalize-space()='รายละเอียด']/following-sibling::button[normalize-space()='จอง']'.</msg>
+<arg>${branch_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-30T19:27:46.510816" elapsed="0.070404"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-30T19:27:46.581639" elapsed="2.128064"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-08-30T19:27:48.711272" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-08-30T19:27:48.711498" level="FAIL">No browser is open.</msg>
+<arg>${reserve_btn_today}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-08-30T19:27:48.710431" elapsed="0.007249">No browser is open.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${reserve_btn_today}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-30T19:27:48.718100" elapsed="0.000063"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${reserve_btn_summit}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-08-30T19:27:48.718578" elapsed="0.000052"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${reserve_btn_summit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-30T19:27:48.718866" elapsed="0.000049"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-08-30T19:27:48.719121" elapsed="0.000040"/>
+</kw>
+<status status="FAIL" start="2025-08-30T19:27:44.570501" elapsed="4.148967">No browser is open.</status>
+</test>
+<status status="FAIL" start="2025-08-30T19:27:39.607375" elapsed="9.113107"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Reservation" id="s1" pass="1" fail="1" skip="0">Reservation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
